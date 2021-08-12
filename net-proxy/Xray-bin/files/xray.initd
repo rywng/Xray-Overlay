@@ -3,9 +3,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 name="xray daemon"
-description=""
-command=/usr/bin/xray
-command_args="${xray_args} -c=/etc/xray/config.json"
+description="Xray init.d file"
 
 depend() {
   need net
@@ -31,7 +29,7 @@ checkconfig() {
 start() {
 	checkconfig || return 1
 
-	ebegin "Starting XRAY"
+	ebegin "Starting Xray"
 	ebegin "Log File : ${XRAY_LOG}"
 	start-stop-daemon --start	\
 	-b -1 ${XRAY_LOG} -2 ${XRAY_LOG}	\
@@ -43,7 +41,7 @@ start() {
 
 stop() {
 	checkconfig || return 1
-	ebegin "Stopping XRAYray"
+	ebegin "Stopping Xray"
 	start-stop-daemon --stop -p ${XRAY_PIDFILE}
 	eend $?
 }
