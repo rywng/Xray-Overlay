@@ -9,7 +9,7 @@ SRC_URI="https://github.com/XTLS/Xray-core/releases/download/v${PV}/Xray-linux-6
 
 LICENSE="MPL-2.0 CC-BY-SA-4.0"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="amd64"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
