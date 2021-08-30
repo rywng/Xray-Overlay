@@ -17,10 +17,6 @@ DEPEND="sys-libs/ncurses:0=
 	sys-libs/readline:0="
 RDEPEND="${DEPEND}"
 
-PATCHES=(
-	"${FILESDIR}/namefirst.diff"
-	)
-
 src_prepare() {
 	default
 	tc-export CC
@@ -28,9 +24,9 @@ src_prepare() {
 }
 
 src_install() {
-	emake PREFIX="${EPREFIX}/usr" DESTDIR="${D}" O_GISTATUS=1 O_ICONS=1 install
+	emake PREFIX="${EPREFIX}/usr" DESTDIR="${D}"  O_ICONS=1 install
 
-	emake PREFIX="${EPREFIX}/usr" DESTDIR="${D}" O_GISTATUS=1 O_ICONS=1 install-desktop
+	emake PREFIX="${EPREFIX}/usr" DESTDIR="${D}"  O_ICONS=1 install-desktop
 
 	newbashcomp misc/auto-completion/bash/nnn-completion.bash nnn
 
