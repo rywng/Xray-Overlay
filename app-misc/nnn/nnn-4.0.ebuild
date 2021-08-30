@@ -18,7 +18,7 @@ DEPEND="sys-libs/ncurses:0=
 RDEPEND="${DEPEND}"
 
 PATCHES=(
-	"${FILESDIR}/*.patch"
+	"${FILESDIR}/namefirst.diff"
 	)
 
 src_prepare() {
