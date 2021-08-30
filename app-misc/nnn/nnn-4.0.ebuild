@@ -24,9 +24,9 @@ src_prepare() {
 }
 
 src_install() {
-	emake PREFIX="${EPREFIX}/usr" DESTDIR="${D}"  O_ICONS=1 install
+	emake PREFIX="${EPREFIX}/usr" DESTDIR="${D}" O_NERD=1 install
 
-	emake PREFIX="${EPREFIX}/usr" DESTDIR="${D}"  O_ICONS=1 install-desktop
+	emake PREFIX="${EPREFIX}/usr" DESTDIR="${D}" O_NERD=1 install-desktop
 
 	newbashcomp misc/auto-completion/bash/nnn-completion.bash nnn
 
