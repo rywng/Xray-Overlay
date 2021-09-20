@@ -5,7 +5,7 @@ EAPI=8
 
 DESCRIPTION="Xray, Penetrates Everything."
 HOMEPAGE="https://github.com/XTLS/Xray-core"
-SRC_URI="https://github.com/XTLS/Xray-core/releases/download/v${PV}/Xray-linux-64.zip"
+SRC_URI="https://github.com/XTLS/Xray-core/releases/download/v${PV}/Xray-linux-64.zip -> Xray-${PV}-linux-64.zip"
 
 LICENSE="MPL-2.0 CC-BY-SA-4.0"
 SLOT="0"
