@@ -1,25 +1,22 @@
 #!/sbin/openrc-run
-# Copyright 2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-name="xray daemon"
-description="Xray init.d file"
-
 depend() {
-  need net
+	need net
 }
 
 checkconfig() {
 	if [ "${RC_SVCNAME}" != "xray" ] ; then
-		XRAY_CFGNAME="${RC_SVCNAME#*.}."
+		V2_CFGNAME="${RC_SVCNAME#*.}."
 	fi
 
-	XRAY_CONFIG="/etc/xray/config.${XRAY_CFGNAME}json"
-	XRAY_PIDFILE="/run/xray.${XRAY_CFGNAME}pid"
-	XRAY_LOG="/var/log/xray.${XRAY_CFGNAME}log"
+	V2_CONFIG="/etc/xray/config.${V2_CFGNAME}json"
+	V2_PIDFILE="/run/xray.${V2_CFGNAME}pid"
+	V2_LOG="/var/log/xray.${V2_CFGNAME}log"
 
-	if [ ! -f ${XRAY_CONFIG} ]; then
-		ewarn "${XRAY_CONFIG} does not exist."
+	if [ ! -f ${V2_CONFIG} ]; then
+		ewarn "${V2_CONFIG} does not exist."
 		return 1
 	fi
 
@@ -30,18 +27,19 @@ start() {
 	checkconfig || return 1
 
 	ebegin "Starting Xray"
-	ebegin "Log File : ${XRAY_LOG}"
+	ebegin "Log File : ${V2_LOG}"
 	start-stop-daemon --start	\
-	-b -1 ${XRAY_LOG} -2 ${XRAY_LOG}	\
-	-m -p ${XRAY_PIDFILE}		\
-	--exec /usr/bin/xray  -- -config ${XRAY_CONFIG}
+	-b -1 ${V2_LOG} -2 ${V2_LOG}	\
+	-m -p ${V2_PIDFILE}		\
+	--exec /usr/bin/xray  -- -config ${V2_CONFIG}
 	eend $?
 
 }
 
 stop() {
 	checkconfig || return 1
-	ebegin "Stopping Xray"
-	start-stop-daemon --stop -p ${XRAY_PIDFILE}
+	ebegin "Stopping xray"
+	start-stop-daemon --stop -p ${V2_PIDFILE}
 	eend $?
 }
+
