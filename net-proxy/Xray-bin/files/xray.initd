@@ -13,7 +13,7 @@ checkconfig() {
 
 	V2_CONFIG="/etc/xray/config.${V2_CFGNAME}json"
 	V2_PIDFILE="/run/xray.${V2_CFGNAME}pid"
-	V2_LOG="/var/log/xray.${V2_CFGNAME}log"
+	V2_LOG="/var/log/xray/xray.${V2_CFGNAME}log"
 
 	if [ ! -f ${V2_CONFIG} ]; then
 		ewarn "${V2_CONFIG} does not exist."
