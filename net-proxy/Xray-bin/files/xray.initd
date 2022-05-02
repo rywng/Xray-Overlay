@@ -1,6 +1,7 @@
 #!/sbin/openrc-run
 # Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
+# This file is modified from V2ray's initd file.
 
 depend() {
 	need net
