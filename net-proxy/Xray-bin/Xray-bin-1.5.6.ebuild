@@ -12,7 +12,9 @@ SLOT="0"
 KEYWORDS="amd64"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+    acct-user/xray
+    acct-group/xray"
 BDEPEND="app-arch/unzip"
 
 src_unpack() {
