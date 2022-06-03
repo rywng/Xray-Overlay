@@ -13,5 +13,5 @@ eix xray
 ## Using transparent proxy
 ```bash
 # Grant binary the cap_net_admin privledge, see https://xtls.github.io/config/transport.html#sockoptobject
-nya setcap cap_net_admin+ep `which xray`
+doas setcap cap_net_admin+ep `which xray`
 ```
