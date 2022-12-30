@@ -1,5 +1,8 @@
+Currently this repo is archived, due to lack of time.
+Please use Gentoo-ZH instead.
+
 # Xray-Overlay
-Gentoo overlay for xray binaries
+entoo overlay for xray binaries
 
 # How to use
 ```bash
